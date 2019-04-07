@@ -96,18 +96,21 @@
 
 
 
-  <meta name="description" content="Call me LiRitian">
-<meta name="keywords" content="cpp,python,ros">
+  <meta name="description" content="Brief IntroAccumulate something after a week’s studyIt’s quite a long time from 19:45 tonight, since I’ve tried times to embellish my host page until now (ps. it’s not been done yet).   But this is th">
+<meta name="keywords" content="cpp,python,ROS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Week1 --- So harsh!!!">
 <meta property="og:url" content="http://LiGaoJi_blog.com/2019/04/07/Week1-cpp-ROS/index.html">
 <meta property="og:site_name" content="LiGaoJi&#39;s little blog">
-<meta property="og:description" content="Call me LiRitian">
+<meta property="og:description" content="Brief IntroAccumulate something after a week’s studyIt’s quite a long time from 19:45 tonight, since I’ve tried times to embellish my host page until now (ps. it’s not been done yet).   But this is th">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T12:56:33.733Z">
+<meta property="og:image" content="e:/blog/LiGaoJi/pictures/Week1%20---%20So%20harsh!!!/WOW1-1.png">
+<meta property="og:image" content="e:/blog/LiGaoJi/pictures/Week1%20---%20So%20harsh!!!/WOW1-2.png">
+<meta property="og:updated_time" content="2019-04-07T14:28:30.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week1 --- So harsh!!!">
-<meta name="twitter:description" content="Call me LiRitian">
+<meta name="twitter:description" content="Brief IntroAccumulate something after a week’s studyIt’s quite a long time from 19:45 tonight, since I’ve tried times to embellish my host page until now (ps. it’s not been done yet).   But this is th">
+<meta name="twitter:image" content="e:/blog/LiGaoJi/pictures/Week1%20---%20So%20harsh!!!/WOW1-1.png">
 
 
 
@@ -337,7 +340,7 @@
                 
               
 
-              <time title="创建时间：2019-04-07 17:36:00 / 修改时间：20:56:33" itemprop="dateCreated datePublished" datetime="2019-04-07T17:36:00+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-07 17:36:00 / 修改时间：22:28:30" itemprop="dateCreated datePublished" datetime="2019-04-07T17:36:00+08:00">2019-04-07</time>
             
 
             
@@ -347,6 +350,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Learning-process/" itemprop="url" rel="index"><span itemprop="name">Learning process</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -376,7 +397,77 @@
       
 
       
-        
+        <h3 id="Brief-Intro"><a href="#Brief-Intro" class="headerlink" title="Brief Intro"></a>Brief Intro</h3><h4 id="Accumulate-something-after-a-week’s-study"><a href="#Accumulate-something-after-a-week’s-study" class="headerlink" title="Accumulate something after a week’s study"></a>Accumulate something after a week’s study</h4><p>It’s quite a <strong>long time</strong> from 19:45 tonight, since I’ve tried times to embellish my host page until now (<strong>ps.</strong> it’s not been done yet). </p>
+<blockquote>
+<p>But this is the first time I’ve stepped forward in the field  of writing a blog and manage a small web.</p>
+</blockquote>
+<p>Oh! There’s no time left, We’d better quickly come into topic.</p>
+<p>In summary, I went through a ROS msg(PointCloud2), rapidly looked through the whole codes in a provided rospackage about one millimeter wave lidar from IT, which our team would drive to detect distance and velocity. Those last 3 days. Then I turnned to practice cpp, and took exercise from OJ from where I picked up a lot more new knowledge, which will be represented below. Finally, the weekend came in, we(with Yegua) decided to code a little program which is meant to save my another friend from repeating the same harsh thing from time to time.</p>
+<p>##Here we go</p>
+<ul>
+<li>cpp<br>###strtok()函数<br>####定义####</li>
+</ul>
+<p>分解字符串为一组字符串。s为要分解的字符，delim为分隔符字符（如果传入字符串，则传入的字符串中每个字符均为分割符）。首次调用时，s指向要分解的字符串，之后再次调用要把s设成NULL。在头文件#include&lt;string.h&gt;中。</p>
+<p>####原型####</p>
+<blockquote>
+<p>char <em>strtok(char s[], const char </em>delim);</p>
+</blockquote>
+<p>####说明####</p>
+<p>（1）当strtok()在参数s的字符串中发现参数delim中包含的分割字符时,则会将该字符改为\0 字符。在第一次调用时，strtok()必需给予参数s字符串，往后的调用则将参数s设置成NULL。每次调用成功则返回指向被分割出片段的指针（2）返回值从s开头开始的一个个被分割的串。当s中的字符查找到末尾时，返回NULL。如果查找不到delim中的字符时，返回当前strtok的字符串的指针。所有delim中包含的字符都会被滤掉，并将被滤掉的地方设为一处分割的节点。<br>（3）需要注意的是，使用该函数进行字符串分割时，会破坏被分解字符串的完整，调用前和调用后的s已经不一样了。第一次分割之后，原字符串str是分割完成之后的第一个字符串，剩余的字符串存储在一个静态变量中，因此多线程同时访问该静态变量时，则会出现错误。</p>
+<p>####使用####</p>
+<p>strtok函数会破坏被分解字符串的完整，调用前和调用后的s已经不一样了。如果要保持原字符串的完整，可以使用strchr和sscanf的组合等。</p>
+<p>###atoi与stoi</p>
+<p>####相同点####</p>
+<p>①都是C++的字符处理函数，把数字字符串转换成int输出<br>②头文件都是#include&lt;cstring></p>
+<p>####不同点####</p>
+<p>①atoi()的参数是 const char<em> ,因此对于一个字符串str我们必须调用 c_str()的方法把这个string转换成 const char</em>类型的,而stoi()的参数是const string<em>,不需要转化为 const char</em>；<br>②stoi()会做范围检查，默认范围是在int的范围内的，如果超出范围的话则会runtime error！</p>
+<p>###类相关函数###</p>
+<p>####复制构造函数的调用时机####</p>
+<p>往函数里面传形参的时候，return的时候都会调用复制构造函数</p>
+<p>####构造函数可以自动进行类型转化####</p>
+<blockquote>
+<p>Class A{</p>
+<p>public: A(int x) {r = x + r}</p>
+<p>private:<br>    int r;</p>
+<p>}</p>
+</blockquote>
+<p>如果调用  <code>A a = 3;</code> 是可以的</p>
+<p>在这方面，构造函数与运算符重载的功能相仿</p>
+<p>####析构函数中delete的使用####<br>如果在析构函数中要delete 在堆中申请的内存，小心有别的 <code>=</code> 进行赋值，<br>或者有进行复制的行为，就可能出现delete两次什么多次的现象。因此最好还是重载一下 “=” 运算符和复制构造函数。</p>
+<p>###继承###<br>1.继承可以保证程序的可重复性，使用接口减少重复内容的编写，提高效率</p>
+<p>2.在子类的覆盖成员函数中，可以先调用基类中的该函数（一种常见的作法）<br>ex：<br>class A : public B<br>{<br>public:<br>    void PrintInfo()<br>    {<br>        B::PrintInfo();<br>        ……..<br>    }<br>}</p>
+<p>3.表示复合关系的时候，用指针数组储存对象的指针，使对象有自主性，同时可表达所属关系。<br>例如 人有几条狗，可以创造对象的指针数组，在狗的类中再存放人的指针指向主人。</p>
+<p>4.至于多态，提高了代码的可扩充性，当添加新的派生类时，只需用基类的指针或者引用去访问派生类的对象，大大简化对象之间的操作。</p>
+<p>###OJ刷题###<br>讲道理在北大mooc那个OJ上跟着Guowei老湿学cpp，贼舒服，还学到很多新的没见过的代码思路。</p>
+<p>####这是他传说中“魔兽世界1”的答案片段###</p>
+<p><img src="E:\blog\LiGaoJi\pictures\Week1 --- So harsh!!!\WOW1-1.png" alt="picture"></p>
+<p>给每个武士的种类编号</p>
+<blockquote>
+<p>int kindNo // 武士的种类编号 0 ~ 4</p>
+</blockquote>
+<p>存放每种武士的数量，并提供制造时的索引（下文详述）</p>
+<blockquote>
+<p>char* CWarrior::names[WARRIOR_NUM] = {…}</p>
+</blockquote>
+<p>定义两个司令部的制造顺序</p>
+<blockquote>
+<p>int CHeadquarter::makingSeq[2][WARRIOR_NUM] = { { 2,3,4,1,0 },{3,0,1,2,4} }; </p>
+</blockquote>
+<p>最重要的一步！！！制造</p>
+<p><img src="E:\blog\LiGaoJi\pictures\Week1 --- So harsh!!!\WOW1-2.png" alt="picture"></p>
+<p>自我体会吧，搜搜原题。</p>
+<p>·Project</p>
+<p>We’ve came up with a plain name ‘AutoFillin’ to obviously display what expectations we are gonna realize. I chose to finish the detection part, which extracts figure info from a picture using opencv in python.</p>
+<p>I surfed the web and got some rough ideas.</p>
+<ol>
+<li>Create a template image and abstract figures from 0~9 used for matching</li>
+<li>Dispose of the source image and divide it into pieces</li>
+<li>Match piece by piece</li>
+</ol>
+<p>I’ve attempted to copy a program from the web. Unfortunately<br>due to my poor experience in opencv-python, there are still<br>upset bugs to be fixed.</p>
+<hr>
+<p>#Next week<br>Next week I’m gonna modify the codes to be run in our team’s UAV, continue to study lidar and advance our porject.</p>
+
       
     </div>
 
@@ -403,7 +494,7 @@
           
             <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/ros/" rel="tag"># ros</a>
+            <a href="/tags/ROS/" rel="tag"># ROS</a>
           
         </div>
       
@@ -452,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,6 +574,23 @@
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
@@ -520,6 +637,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Brief-Intro"><span class="nav-number">1.</span> <span class="nav-text">Brief Intro</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Accumulate-something-after-a-week’s-study"><span class="nav-number">1.1.</span> <span class="nav-text">Accumulate something after a week’s study</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
