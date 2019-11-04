@@ -294,6 +294,414 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://LiGaoJi_blog.com/2019/11/03/misc-flow-analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiRT">
+      <meta itemprop="description" content="Call me LiRitian">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiRT's fancy blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/03/misc-flow-analysis/" class="post-title-link" itemprop="url">misc-flow_analysis</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-03 20:03:19" itemprop="dateCreated datePublished" datetime="2019-11-03T20:03:19+08:00">2019-11-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-04 22:39:26" itemprop="dateModified" datetime="2019-11-04T22:39:26+08:00">2019-11-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MISC-FLOW-ANALYSIS"><a href="#MISC-FLOW-ANALYSIS" class="headerlink" title="MISC-FLOW_ANALYSIS"></a>MISC-FLOW_ANALYSIS</h1><p>misc部分中综合性比较高的一部分，流量分析。遇到网络流量的话，还可以靠计网学到的知识混一下，但如果遇到键盘鼠标流的话，讲道理题目不会难，只是不熟悉。这类题目主要还是考察wireshark的使用，个人认为协议分析倒是次要一点</p>
+<p>流量分析题目必用WireShark，所以一下大部分为介绍WireShark的使用</p>
+<h2 id="OVERALL"><a href="#OVERALL" class="headerlink" title="OVERALL"></a>OVERALL</h2><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\流量取证.png" alt="流量取证"></p>
+<h3 id="过滤命令集"><a href="#过滤命令集" class="headerlink" title="过滤命令集"></a>过滤命令集</h3><ul>
+<li>在此类题目中，HTTP协议分析占大头，并且需要配合过滤命令</li>
+</ul>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark过滤命令1.png" alt="wireshark过滤命令1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark过滤命令2.png" alt="wireshark过滤命令2"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark过滤命令3.png" alt="wireshark过滤命令3"></p>
+<h3 id="流汇聚"><a href="#流汇聚" class="headerlink" title="流汇聚"></a>流汇聚</h3><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark流汇聚2.png" alt="wireshark流汇聚2"><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark流汇聚1.png" alt="wireshark流汇聚1"></p>
+<h3 id="数据提取"><a href="#数据提取" class="headerlink" title="数据提取"></a>数据提取</h3><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark数据提取1.png" alt="wireshark数据提取1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark数据提取2.png" alt="wireshark数据提取2"></p>
+<h3 id="协议分析"><a href="#协议分析" class="headerlink" title="协议分析"></a>协议分析</h3><ul>
+<li><p>往往需要根据流量统计中占比较高的进行分析</p>
+</li>
+<li><p>getshell流 可以尝试用 tcp contains “ls”等系统命令</p>
+</li>
+</ul>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark协议分析1.png" alt="wireshark协议分析1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\wireshark协议分析2.png" alt="wireshark协议分析2"></p>
+<ul>
+<li>无线wifi流量包、USB流量包要特殊对待</li>
+</ul>
+<h3 id="USB流量分析"><a href="#USB流量分析" class="headerlink" title="USB流量分析"></a>USB流量分析</h3><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\USB流量分析.png" alt="USB流量分析"></p>
+<h3 id="键盘流量分析"><a href="#键盘流量分析" class="headerlink" title="键盘流量分析"></a>键盘流量分析</h3><ul>
+<li>键盘流量有可能出现五笔拼音，需要注意</li>
+</ul>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\键盘流量分析1.png" alt="键盘流量分析1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\键盘流量分析2.png" alt="键盘流量分析2"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\键盘流量分析3.png" alt="键盘流量分析3"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\键盘流量分析4.png" alt="键盘流量分析4"></p>
+<h3 id="鼠标流量"><a href="#鼠标流量" class="headerlink" title="鼠标流量"></a>鼠标流量</h3><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\鼠标流量1.png" alt="鼠标流量1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\鼠标流量2.png" alt="鼠标流量2"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\鼠标流量3.png" alt="鼠标流量3"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\鼠标流量4.png" alt="鼠标流量4"><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\鼠标流量5.png" alt="鼠标流量5"></p>
+<h3 id="无线流量"><a href="#无线流量" class="headerlink" title="无线流量"></a>无线流量</h3><p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\无线流量破解密码1.png" alt="无线流量破解密码1"></p>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\无线流量破解密码2.png" alt="无线流量破解密码2"></p>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><ul>
+<li>HTTPS = HTTP + TLS(port 443)</li>
+</ul>
+<p><img src="/2019/11/03/misc-flow-analysis/E:/blog\LiGaoJi\source\_posts\misc-flow-analysis\HTTPS流量分析1.png" alt="HTTPS流量分析1"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://LiGaoJi_blog.com/2019/11/03/misc-archive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiRT">
+      <meta itemprop="description" content="Call me LiRitian">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiRT's fancy blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/11/03/misc-archive/" class="post-title-link" itemprop="url">misc-archive</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-03 19:36:08" itemprop="dateCreated datePublished" datetime="2019-11-03T19:36:08+08:00">2019-11-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-04 22:39:12" itemprop="dateModified" datetime="2019-11-04T22:39:12+08:00">2019-11-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MISC-ARCHIVE"><a href="#MISC-ARCHIVE" class="headerlink" title="MISC-ARCHIVE"></a>MISC-ARCHIVE</h1><p>积极备赛（努力摸佛脚）CTF的第二周</p>
+<h2 id="OVERALL"><a href="#OVERALL" class="headerlink" title="OVERALL"></a>OVERALL</h2><p>压缩文件一般有.rar和.zip两种类型，zip类型比较简单一些，因为文件头相对简洁。解该类题目一般分为伪加密和暴力破解两类。</p>
+<h3 id="ZIP"><a href="#ZIP" class="headerlink" title="ZIP"></a>ZIP</h3><ul>
+<li><p>伪加密</p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\伪加密zip1.png" alt="伪加密zip1"></p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\伪加密zip2.png" alt="伪加密zip2"></p>
+</li>
+<li><p>伪加密</p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\加密暴力破解zip1.png" alt="加密暴力破解zip1"></p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\加密暴力破解zip2.png" alt="加密暴力破解zip2"></p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\加密暴力破解zip3.1.png" alt="加密暴力破解zip3.1"></p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\加密暴力破解zip3.2.png" alt="加密暴力破解zip3.2"></p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\加密暴力破解zip3.png" alt="加密暴力破解zip3"></p>
+</li>
+</ul>
+<h3 id="RAR"><a href="#RAR" class="headerlink" title="RAR"></a>RAR</h3><ul>
+<li><p>伪加密</p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\伪加密rar.png" alt="伪加密rar"></p>
+</li>
+<li><p>RAR文件头格式</p>
+<p><img src="/2019/11/03/misc-archive/E:/blog\LiGaoJi\source\_posts\misc-archive\RAR文件格式.png" alt="RAR文件格式"></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://LiGaoJi_blog.com/2019/10/27/misc-picture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -742,7 +1150,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
